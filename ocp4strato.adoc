@@ -77,11 +77,15 @@ ruby              openshift     2.3,2.4,2.5,latest
 
 
 *oc new-project strato*
+
 *git clone https://github.com/lucperkins/strato.git*
+
 *cd strato*
 
 *mkdir -p .s2i/bin/*
+
 *wget https://raw.githubusercontent.com/marcredhat/golang/master/assemble -O .s2i/bin/assemble*
+
 *chmod +x .s2i/bin/assemble*
 
 *odo create golang strato --project strato --port 8081 --env INSTALL_URL=github.com/lucperkins/strato/cmd/strato-http --env IMPORT_URL=github.com/lucperkins/strato*
