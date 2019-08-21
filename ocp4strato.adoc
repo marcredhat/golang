@@ -41,11 +41,15 @@ ruby              openshift     2.3,2.4,2.5,latest
 
 
 *sudo subscription-manager register --user <user>*
+
 *sudo subscription-manager list --available*
+
 *sudo subscription-manager attach --pool <pool ID>*
 
 *sudo subscription-manager repos --enable rhel-7-server-devtools-rpms*
+
 *sudo yum update*
+
 *sudo yum install -y go-toolset-1.11*
 
 
