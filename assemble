@@ -17,13 +17,13 @@ pushd /tmp/src
 
         mkdir -p $GOPATH/src/$IMPORT_URL
 
-        cp /tmp/src/* $GOPATH/src/$IMPORT_URL
+        cp -r /tmp/src/* $GOPATH/src/$IMPORT_URL
 
         if [[ -d /tmp/artifacts/pkg ]]; then
 
             echo "Restoring previous build artifacts"
 
-            cp /tmp/artifacts/pkg $GOPATH
+            cp -r /tmp/artifacts/pkg $GOPATH
 
         fi
 
