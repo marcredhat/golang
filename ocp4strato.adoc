@@ -129,4 +129,4 @@ Applying URL changes
 Pushing to component strato of type local
  ✓  Checking file changes for pushing [16ms]
  ✓  No file changes detected, skipping build. Use the '-f' flag to force the build.
- ----
+
