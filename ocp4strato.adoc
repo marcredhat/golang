@@ -1,18 +1,17 @@
-Deploying Strato
+== Deploying Strato
 (An all-in-one data service for microservices, FaaS functions, etc. gRPC and HTTP interfaces, https://github.com/lucperkins/strato)
 on OpenShift 4.1
 
-Lab guide – draft
+== Lab guide – draft
 
 
-
-oc version
+*oc version*
 Client Version: version.Info{Major:"4", Minor:"1+", GitVersion:"v4.1.8-201907241243+785687c-dirty", GitCommit:"785687c", GitTreeState:"dirty", BuildDate:"2019-07-24T19:44:04Z", GoVersion:"go1.11.6", Compiler:"gc", Platform:"linux/amd64"}
 Server Version: version.Info{Major:"1", Minor:"13+", GitVersion:"v1.13.4+4b86cc5", GitCommit:"4b86cc5", GitTreeState:"clean", BuildDate:"2019-07-24T19:42:25Z", GoVersion:"go1.11.6", Compiler:"gc", Platform:"linux/amd64"}
 [mchisine-redhat.com@clientvm 0 ~]$
 
 
-Install odo
+*Install odo*
 sudo curl -L https://github.com/openshift/odo/releases/latest/download/odo-linux-amd64 -o /usr/bin/odo && sudo chmod +x /usr/bin/odo
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
@@ -35,7 +34,7 @@ python            openshift     2.7,3.5,3.6,latest
 ruby              openshift     2.3,2.4,2.5,latest
 
 
-Install Go toolset
+*Install Go toolset*
 sudo subscription-manager register --user <user>
 sudo subscription-manager list --available
 sudo subscription-manager attach --pool <pool ID>
@@ -44,11 +43,11 @@ sudo subscription-manager repos --enable rhel-7-server-devtools-rpms
 sudo yum update
 sudo yum install -y go-toolset-1.11
 
-Create golang imagestream
+*Create golang imagestream*
 curl -kL https://raw.githubusercontent.com/marcredhat/golang/master/imagestream 2> /dev/null | oc apply -n openshift --as system:admin -f -
 
 
-odo catalog list components
+*odo catalog list component*
 NAME              PROJECT       TAGS
 dotnet            openshift     1.0,1.1,2.1,2.2,latest
 golang            openshift     1.11,latest
@@ -74,10 +73,11 @@ chmod +x .s2i/bin/assemble
 
 odo create golang strato --project strato --port 8081 --env INSTALL_URL=github.com/lucperkins/strato/cmd/strato-http --env IMPORT_URL=github.com/lucperkins/strato
 
-odo url create strato  --port 8081
+*odo url create strato  --port 8081*
 
 
-odo push
+*odo push*
+----
  ✓  Creating project strato
  ✓  Successfully created project strato
 Validation
@@ -97,9 +97,11 @@ Pushing to component strato of type local
  ✓  Copying files to component [6s]
  ✓  Building component [1m]
  ✓  Changes successfully pushed to component
+----
 
 
-odo push --show-log
+*odo push --show-log*
+----
 Validation
  ✓  Checking component [22ms]
 
@@ -112,3 +114,4 @@ Applying URL changes
 Pushing to component strato of type local
  ✓  Checking file changes for pushing [16ms]
  ✓  No file changes detected, skipping build. Use the '-f' flag to force the build.
+ ----
