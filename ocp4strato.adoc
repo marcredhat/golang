@@ -37,7 +37,7 @@ ruby              openshift     2.3,2.4,2.5,latest
 ----
 
 
-*Install Go toolset*
+== Install Go toolset
 
 
 *sudo subscription-manager register --user <user>*
@@ -49,7 +49,7 @@ ruby              openshift     2.3,2.4,2.5,latest
 *sudo yum install -y go-toolset-1.11*
 
 
-*Create golang imagestream*
+== Create golang imagestream
 
 
 *curl -kL https://raw.githubusercontent.com/marcredhat/golang/master/imagestream 2> /dev/null | oc apply -n openshift --as system:admin -f -*
@@ -73,7 +73,7 @@ ruby              openshift     2.3,2.4,2.5,latest
 ----
 
 
-*Deploy Strato*
+== Deploy Strato
 
 
 *oc new-project strato*
