@@ -11,7 +11,7 @@
 ----
 Client Version: version.Info{Major:"4", Minor:"1+", GitVersion:"v4.1.8-201907241243+785687c-dirty", GitCommit:"785687c", GitTreeState:"dirty", BuildDate:"2019-07-24T19:44:04Z", GoVersion:"go1.11.6", Compiler:"gc", Platform:"linux/amd64"}
 Server Version: version.Info{Major:"1", Minor:"13+", GitVersion:"v1.13.4+4b86cc5", GitCommit:"4b86cc5", GitTreeState:"clean", BuildDate:"2019-07-24T19:42:25Z", GoVersion:"go1.11.6", Compiler:"gc", Platform:"linux/amd64"}
------
+----
 
 
 *Install odo*
