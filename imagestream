@@ -29,7 +29,7 @@
                 }
             },
             {
-                "name": "1.10.2",
+                "name": "1.11",
                 "annotations": {
                   "description": "Build and run Go applications on CentOS 7. For more information about using this builder image, including OpenShift considerations, see https://github.com/sclorg/golang-container/blob/master/1.10/README.md.",
                   "iconClass": "icon-go-gopher",
