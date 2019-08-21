@@ -69,7 +69,7 @@ git clone https://github.com/lucperkins/strato.git
 cd strato
 
 mkdir -p .s2i/bin/
-wget https://gist.githubusercontent.com/kadel/58f8b9563328bf47fdb7dc9dd9958848/raw/4c77d5abba48edb8aa20895c8c78d4fb10a87cb2/assemble -O .s2i/bin/assemble
+wget https://raw.githubusercontent.com/marcredhat/golang/master/assemble -O .s2i/bin/assemble
 chmod +x .s2i/bin/assemble
 
 odo create golang strato --project strato --port 8081 --env INSTALL_URL=github.com/lucperkins/strato/cmd/strato-http --env IMPORT_URL=github.com/lucperkins/strato
